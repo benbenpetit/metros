@@ -116,9 +116,9 @@ main {
               width: 100%;
               max-width: none;
               height: 100%;
-              object-fit: contain;
-              filter: invert(33%) sepia(54%) saturate(499%) hue-rotate(357deg)
-                brightness(93%) contrast(85%);
+              object-fit: cover;
+              filter: invert(28%) sepia(13%) saturate(1000%) hue-rotate(335deg)
+                brightness(94%) contrast(84%);
             }
           }
         }

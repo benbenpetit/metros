@@ -91,7 +91,12 @@ const App = () => {
                       {i === link.split && (
                         <div className='hidden-image'>
                           <span>
-                            <img src={getImageUrl(link.img)} alt={link.title} />
+                            <img
+                              width={150}
+                              height={120}
+                              src={getImageUrl(link.img)}
+                              alt={link.title}
+                            />
                           </span>
                         </div>
                       )}
