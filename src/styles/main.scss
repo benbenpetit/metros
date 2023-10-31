@@ -1,0 +1,128 @@
+@import './reset';
+@font-face {
+  font-family: 'TheNightWatch';
+  src: url(../assets/fonts/TheNightWatch.ttf) format('truetype');
+  font-weight: 400;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'TheNightWatch', sans-serif;
+  background-color: #cb6930;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 60px;
+  background-color: #fff;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
+  }
+}
+
+main {
+  min-height: 100vh;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+
+    h1 {
+      margin-bottom: 1em;
+      font-size: 24px;
+    }
+  }
+
+  .list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 6vw;
+
+    li {
+      position: relative;
+      border-top: 2px solid #000;
+
+      &:last-child {
+        border-bottom: 2px solid #000;
+      }
+
+      > a {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        text-decoration: none;
+        color: inherit;
+        padding: 0.25em 0;
+        line-height: 1;
+
+        &:hover {
+          .hidden-image {
+            width: 190px;
+            margin: 0 0.15em;
+          }
+        }
+
+        > span {
+          transform: translateY(0.1em);
+        }
+
+        sup {
+          position: relative;
+          font-size: 0.5em;
+          vertical-align: super;
+        }
+
+        .hidden-image {
+          position: relative;
+          display: inline-block;
+          width: 0;
+          overflow: hidden;
+          pointer-events: none;
+          transition: all 0.225s cubic-bezier(0.2, 0, 0, 1);
+
+          span {
+            display: block;
+            position: absolute;
+            inset: 0;
+
+            img {
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              max-width: none;
+              height: 100%;
+              object-fit: contain;
+              filter: invert(33%) sepia(54%) saturate(499%) hue-rotate(357deg)
+                brightness(93%) contrast(85%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
