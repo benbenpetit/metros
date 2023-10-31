@@ -69,6 +69,10 @@ const LINKS = [
   }
 ]
 
+const getImageUrl = (x: string) => {
+  return new URL(`/src/assets/img/${x}`, import.meta.url).href
+}
+
 const App = () => {
   return (
     <ReactLenis root>
@@ -87,10 +91,7 @@ const App = () => {
                       {i === link.split && (
                         <div className='hidden-image'>
                           <span>
-                            <img
-                              src={`/src/assets/img/${link.img}`}
-                              alt={link.title}
-                            />
+                            <img src={getImageUrl(link.img)} alt={link.title} />
                           </span>
                         </div>
                       )}
